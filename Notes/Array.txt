@@ -1,0 +1,300 @@
+
+SUMMARY / NOTES:
+
+    01.What is an Array?
+    02. Why Arrays?
+    03. Types of Arrays in Java
+    04. Array Declaration, Creation, Initialization
+    05. Memory Representation (Internal Working)
+    06. Array Properties
+    07. Array Operations (Time Complexities)
+    08. Traversing Arrays
+    09. Array Length
+    10. Common Array Problems
+    11. Important: Jagged Arrays
+    12. 2D Arrays (Matrix Concepts)
+    13. Arrays Class (java.util.Arrays) – Advanced Feature
+    14. Deep Array Operations
+    15. Array vs ArrayList (Interview Question)
+    16. Limitations of Arrays
+    17. Advanced Topic: Dynamic Arrays
+    18. Advanced: Memory + Performance
+    19. Sparse Arrays
+    20. Interview Questions from Arrays
+    21. Array Edge Cases
+    22. Immutable vs Mutable Arrays
+    23. Array as Function Argument
+    24. Multithreading & Arrays
+    25. Memory Optimization (Advanced)
+    26. Real-Life Uses of Arrays
+
+    ----------------------------------------------------------------------------
+    01. Array:An array is a collection of elements of the same data type, stored in contiguous memory locations, accessed using an index.(fixed size, fast access O(n), store homogeneous data)
+
+    02. Why: To store multiple values in one container.Easily iterate and process.Useful in DSA structures like stacks, queues, heaps, DP, etc.
+
+    03. Types: Single Dimensional Array
+        int[] arr = new int[5];
+
+        Multi-Dimensional Array (2D, 3D…)
+        int[][] matrix = new int[3][3];
+
+        Jagged Array (Irregular size rows)
+        int[][] jag = new int[3][];
+
+    04. Array Declaration, Creation, Initialization:
+    Declaration
+    int[] a; OR int a[];
+
+    Memory Allocation
+    a = new int[5];
+
+    Initialization
+    int[] a = {1, 2, 3, 4};
+    a[0] = 10;
+
+    05.Memory Representation (Internal Working)
+
+    Stored in Heap memory.
+    Reference variable stored in Stack.
+    Contiguous block allocated.
+
+    Default values set:
+
+    int → 0
+    double → 0.0
+    boolean → false
+    Object → null
+
+    06. Properties:
+    | Property            | Description           |
+    | ------------------- | --------------------- |
+    | Fixed size          | Cannot grow or shrink |
+    | Indexed access      | arr[i]                |
+    | Homogeneous         | Same type elements    |
+    | Contiguous memory   | Faster access         |
+    | Zero-based indexing | Starts from 0         |
+
+    07. Operations (Time Complexities)
+    
+    | Operation       | Complexity   | Explanation      |
+    | --------------- | ------------ | ---------------- |
+    | Access          |   O(1)       | Direct index     |
+    | Search (linear) |   O(n)       | Check one by one |
+    | Search (binary) |   O(log n)   | Sorted array     |
+    | Insert (at end) |   O(1)       | If space         |
+    | Insert (middle) |   O(n)       | Shift elements   |
+    | Delete (middle) |   O(n)       | Shift elements   |
+
+    08. Traversing Arrays
+    For loop
+    Enhanced for (for-each)
+    While loop
+
+    09. [arr.length] gives size of array. --> (Length is final, cannot change.)
+
+    10. Common Array Problems
+    Largest element
+    Smallest element
+    Reverse array
+    Copy array
+    Compare arrays
+    Count elements
+
+    11. Jagged Arrays : Different row lengths:
+
+    int[][] jag = new int[3][];
+    jag[0] = new int[2];
+    jag[1] = new int[5];
+    jag[2] = new int[3];
+
+    Used in:
+
+    Triangular matrices
+    Variable column inputs
+
+    12. 2D Arrays (Matrix Concepts)
+    Matrix operations:
+
+    Addition
+    Subtraction
+    Multiplication
+    Transpose
+    Diagonal sum
+    Boundary elements
+
+    13. Arrays Class (java.util.Arrays) – Advanced Feature
+
+    Common useful methods:
+    | Method                   | Use                       |
+    | ------------------------ | ------------------------- |
+    |  sort(arr)               | Sorts ascending           |
+    |  binarySearch(arr, key)  | Searches in sorted array  |
+    |  copyOf(arr, newSize)    | Clones with new size      |
+    |  fill(arr, x)            | Fills all elements with x |
+    |  equals(arr1, arr2)      | Compare arrays            |
+    |  toString(arr)           | Print array               |
+
+    14. Deep Array Operations
+
+    For multidimensional arrays:
+
+    Arrays.deepToString()
+    Arrays.deepEquals()
+
+    15. Array vs ArrayList 
+    | Array                | ArrayList       |
+    | -------------------- | --------------- |
+    | Fixed size           | Dynamic         |
+    | Can store primitives | Only objects    |
+    | Fast                 | Slight overhead |
+    | Length property      | size() method   |
+
+    16. Limitations of Arrays
+
+    Fixed size.
+    Cannot check bounds automatically (no error until runtime).
+    Only homogeneous data.
+
+    17. Advanced Topic: Dynamic Arrays
+
+    Java internally uses:
+    Arrays + resizing
+    Used in ArrayList, Vector, Stack.
+
+    Resizing Strategy:
+    When full → new array = old × 1.5 (or 2x)
+    Copy elements (O(n)).
+
+    18. Advanced: Memory + Performance
+    Access
+    // Fast O(1) due to contiguous blocks.
+
+    Insert / Delete
+    Slow O(n), must shift elements.
+
+    19. Sparse Arrays
+
+    Most elements = zero / null.
+
+    Used in:
+
+    Graph adjacency
+    Machine learning matrices
+
+    Represented using:
+
+    Array of lists
+    Hash maps
+
+    20. Interview Questions from Arrays
+
+    Here are the most asked topics:
+
+    Find missing number
+    Move zeros to end
+    Kadane’s Algorithm (max subarray sum)
+    Prefix sum array
+    Sliding window
+    Merge sorted arrays
+    Rotate array (left/right)
+    Majority element
+    Frequency count
+    Dutch national flag problem (0,1,2 sort)
+
+    21. Array Edge Cases
+
+    Null array
+    Empty array
+    Out of bounds
+    Duplicate values
+
+    22. Immutable vs Mutable Arrays
+
+    Arrays are mutable (values can change).
+    The reference can be final but contents can change.
+
+    23. Array as Function Argument
+
+    Passed by reference (actually “pass-by-value of reference”).
+    Changes inside function reflect outside.
+
+    24. Multithreading & Arrays
+
+    Arrays are not thread-safe.
+    Access must be synchronized manually.
+
+    25. Memory Optimization (Advanced)
+
+    For large arrays:
+
+    Use int[] instead of Integer[]
+    Use byte or short if range small
+    Use Bit Array / BitSet for boolean arrays
+
+    26. Real-Life Uses of Arrays
+
+    CPU scheduling queues
+    Memory blocks
+    Image representation (2D arrays)
+    Sorting algorithms
+    2D games
+    Machine learning matrices
+----------------------------------------------------------------------------------------
+1. Find the Second Largest Element
+Given an array of integers, find the second largest distinct element without sorting the array.
+
+2. Check if Array is Sorted or Not
+Given an array, check whether it is strictly increasing, strictly decreasing, or not sorted.
+
+3. Remove Duplicates from a Sorted Array
+Given a sorted array, remove duplicates in-place and return the new length.
+
+(Example:
+Input: [1,1,2,2,2,3] → Output length: 3, array: [1,2,3, …])
+
+4. Find the Missing Number
+An array contains numbers from 1 to n, but one number is missing.
+Find the missing number.
+
+Example:
+Input: [1, 2, 4, 5] → Output: 3.
+
+5. Shift All Zeros to the End
+Given an array, shift all 0s to the end without changing the order of non-zero elements.
+
+Example:
+Input: [0,1,0,3,12] → Output: [1,3,12,0,0]
+
+6. Find Majority Element (more than n/2 times)
+Find the element that appears more than n/2 times in the array (if it exists).
+
+7. Maximum Sum Subarray (Kadane’s Logic)
+Find the maximum possible sum of a continuous subarray.
+
+Example:
+Input: [-2,1,-3,4,-1,2,1,-5,4]
+Output: 6 (subarray: [4,-1,2,1])
+
+8. Pair with Given Sum
+Given a sorted array and a target sum, find if there exists any pair such that:
+arr[i] + arr[j] = target.
+
+Example:
+Input: [1,2,3,4,6], target = 7
+Output: True (1+6 or 3+4)
+
+9. Rotate Array by K Positions
+Given an array, rotate it right by k positions.
+
+Example:
+Input: [1,2,3,4,5,6], k=2
+Output: [5,6,1,2,3,4]
+
+10. Find Leaders in an Array
+An element is a leader if it is strictly greater than all elements to its right.
+
+Example:
+Input: [16, 17, 4, 3, 5, 2]
+Output: 17, 5, 2
+
