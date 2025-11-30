@@ -1,0 +1,105 @@
+# What is a String?
+
+A String in Java is:
+
+✔ A sequence of characters
+✔ Stored as an object of class String
+✔ Immutable → cannot be changed after creation
+✔ Stored in String Constant Pool (SCP) or Heap
+
+# 2 Ways to Create Strings
+
+1. String Literal (Stored in SCP)
+String s1 = "Hello";
+
+✔ Fast
+✔ Memory-efficient
+✔ Reuses already existing objects in SCP
+
+2. Using new Keyword (Stored in Heap)
+String s2 = new String("Hello");
+
+✔ Always creates a new object
+✔ Slower than literal
+
+# Why Strings Are Immutable?
+
+Because:
+
+Characters are stored in a final char[] array
+String objects are stored in String Constant Pool (SCP)
+Same string literal can be shared
+Immutability ensures security and thread-safety
+
+# String Memory Model
+
+String Pool (SCP)
+
+Special area inside Heap
+Stores string literals
+If the same literal already exists → reused
+
+Heap Memory
+
+Stores objects created using new
+
+Example:
+
+String s1 = "Java";  
+String s2 = "Java";  // s1 & s2 refer to same object
+String s3 = new String("Java");  // new object
+
+# String Comparison
+
+== (Reference comparison): Checks memory address.
+
+.equals() (Content comparison): Checks character-by-character equality.
+
+Example:
+s1 == s2   // true (same SCP object)
+s1.equals(s2) // true (content match)
+s1 == s3   // false (heap vs SCP)
+s1.equals(s3) // true
+
+# String Methods:
+
+"Hello".length() → 5 | Returns number of characters.
+"Java".charAt(2) → 'v' |Returns character at a position.
+
+"Programming".substring(3) → "gramming"     |Extracts part of string.
+"Programming".substring(0, 7) → "Program"   |Extracts part of string.
+
+"Hello".equals("hello") → false  
+"Hello".equalsIgnoreCase("hello") → true
+
+Lexicographical comparison.
+"abc".compareTo("abc") → 0  
+"abc".compareTo("abd") → -1  
+"abf".compareTo("abe") → 1
+
+"java".toUpperCase() → "JAVA"
+"JAVA".toLowerCase() → "java"
+
+"  Hello  ".trim() → "Hello"                |Removes leading & trailing spaces.
+
+"aaabbb".replace("a","x") → "xxxbbb"
+"12-12-2024".replaceAll("-", "/") → "12/12/2024"
+
+"Hello World".contains("World") → true
+
+"Programming".startsWith("Pro") → true
+"file.pdf".endsWith(".pdf") → true
+
+"Java is great".split(" ")                  | Breaks string into array.
+→ ["Java", "is", "great"]
+
+"banana".indexOf('a') → 1  
+"banana".lastIndexOf('a') → 5
+
+"Hello".concat("World") → "HelloWorld"
+
+"".isEmpty() → true  
+"   ".isBlank() → true
+
+String.valueOf(10) → "10"
+String.valueOf(true) → "true"
